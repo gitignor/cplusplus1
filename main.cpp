@@ -1,4 +1,4 @@
-/* Aleksei Nikiforov 17TARgv
+/* Aleksei Nikiforov TARgv17
  * ABC
  * Существует треугольник?
  * Какой?
