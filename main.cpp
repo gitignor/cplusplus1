@@ -24,14 +24,14 @@ int main(int argc, char *argv[])
     QString triangleSizes = "Размеры сторон треугольника: %1x%2x%3";
     triangleSizes = triangleSizes.arg(a).arg(b).arg(c);
     qDebug() << triangleSizes;
-    if (((a + b > c) && (a + c > b) && (b + c > a)) && ((a > 0) && (b > 0) && (c > 0))){
+    if (((a+b > c) && (a+c > b) && (b+c > a)) && ((a > 0) && (b > 0) && (c > 0))){
          qDebug() << "Треугольник существует";
     } else {
          qDebug() << "Треугольник не существует";
          return 0;
     }
-    float p = (a + b + c) / 2; //находим полупериметр
-    float s = sqrt(p * (p - a) * (p - b) * (p - c)); // находим площадь
+    float p = (a+b+c) / 2; //находим полупериметр
+    float s = sqrt(p*(p-a)*(p-b)*(p-c)); // находим площадь
     QString triangleType = ""; // переменная, куда будем записывать тип нашего тре-ка
     if (a == b && b == c) {
         triangleType = "равностороннего ";
@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
         triangleType = "равнобедренного ";
     } else {
         triangleType = "разностороннего ";
-    } if (a * a + b * b == c * c || a * a + c * c == b * b || c * c + b * b == a * a) {
+    } if (a*a + b*b == c*c || a*a + c*c == b*b || c*c + b*b == a*a) {
         triangleType += "прямоугольного ";
-    } else if ((a * a + b * b > c * c || a * a + c * c > b * b || c * c + b * b > a * a) && (a != b && b != c && a != c)) {
+    } else if ((a*a + b*b > c*c || a*a + c*c > b*b || c*c + b*b > a*a) && (a != b && b != c && a != c)) {
         triangleType += "тупого ";
     } else {
         triangleType += "острого ";
